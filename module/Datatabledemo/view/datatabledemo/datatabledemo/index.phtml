@@ -1,0 +1,38 @@
+<?php
+    $this->headLink()->prependStylesheet($this->basePath().'/datatables/css/DT_bootstrap.css')
+                    ->prependStylesheet($this->basePath().'/css/bootstrap-responsive.css')
+                    ->prependStylesheet($this->basePath().'/css/bootstrap-sortable.css')
+                    ->prependStylesheet($this->basePath().'/css/jquery-explr-1.4.css')
+                    ->prependStylesheet($this->basePath().'/css/jquery.custom-scrollbar.css')
+                    ->prependStylesheet($this->basePath().'/css/style.css')
+                    ->prependStylesheet($this->basePath().'/css/bootstrap.css')
+                    ->prependStylesheet($this->basePath().'/css/jquery-ui.css');
+                        
+    
+    $this->headScript()->appendFile($this->basePath().'/datatables/js/DT_bootstrap.js')
+		       ->appendFile($this->basePath().'/datatables/js/jquery.dataTables.columnFilter.js')
+                       ->appendFile($this->basePath().'/js/datatabledemo/dtdemo.js')
+                
+                        ->prependFile($this->basePath().'/datatables/js/bootstrap-modal-strict-close.js')
+                        ->prependFile($this->basePath().'/datatables/js/jquery.dataTables.js')
+                        ->prependFile($this->basePath().'/js/bootstrap.js');
+?>
+
+<div class="container"> 
+    <center><h1><u>List of Product(s)</u></h1></center>
+    <table class="table table-striped table-bordered camplisttbl dataTable" id="tbl_productList">
+        <thead>
+            <tr>
+                <th><a href="javascript:void(0);" id="callActionDeleteAll" style="color: yellow;" onclick="deleteallproduct()">Delete</a>&nbsp;&nbsp;<input type="checkbox" name="mainCheckbox" title="Select All" id="selectAllContacts"/></th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th class="no-arrow action">Action</th>
+                <!--  <th class="no-arrow " style="display:none;">ID</th>-->
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    
+    <input type="hidden" id="selectedContact" name="selectedContact">
+</div>    
